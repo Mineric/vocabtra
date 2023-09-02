@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>扫描文章</title>
+  </head>
+  <body>
+    <h1>扫描日语文章并拆分单词</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="article">选择要扫描的文章：</label>
+      <input type="file" name="article" accept=".txt" />
+      <br />
+      <input type="submit" value="扫描" />
+    </form>
+
+    {% if words %}
+    <h2>拆分的单词：</h2>
+    <ul>
+      {% for word in words %}
+      <li>{{ word }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
