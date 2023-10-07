@@ -25,4 +25,4 @@ jobs:
       
       - name: Run Ruff linting
         run: |
-          python manage.py lint
+          ruff check .
