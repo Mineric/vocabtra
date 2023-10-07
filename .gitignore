@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Linter
+.ruff_cache
+
+# Prettier
+.prettierrc
