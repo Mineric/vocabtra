@@ -1,2 +1,15 @@
 
 # Create your models here.
+
+from django.db import models
+from django.contrib.auth.models import User
+
+#Schemes for scanned articles
+class ScannedArticle(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+#Schemes for words
+class Word(models.Model):
+    article = models.ForeignKey(ScannedArticle, on_delete=models.CASCADE)
+    word = models.CharField(max_length=100)
