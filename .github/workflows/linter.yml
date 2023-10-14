@@ -1,0 +1,28 @@
+name: Linter
+on: [ push, pull_request ]
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.9
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - uses: chartboost/ruff-action@v1
+        with:
+          src: "."
+          version: 0.0.292 
+          args: --select B
+      
+      - name: Run Ruff linting
+        run: |
+          ruff check .
