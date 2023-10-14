@@ -9,6 +9,7 @@ for i in sub:
     if '8000' in i:
         pid.append(i.split()[1])
 if len(pid) > 0:
+    
 #     print(f'django process is:{len(pid)},do you want to kill,y or n')
 #     yes = input('input:')
 #     if yes == 'n':
