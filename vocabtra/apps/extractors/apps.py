@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SentimentConfig(AppConfig):
+class ExtractorsConfig(AppConfig):
     name = 'extractors'
     
